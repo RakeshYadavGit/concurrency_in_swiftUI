@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let imageUrl: URL = URL(string: "https://picsum.photos/200/300")!
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            List(0...100, id: \.self) { item in
+                Text("\(item)")
+            }
+            
+            Button("Download Image URL") {
+                self.downloadImage()
+            }
         }
         .padding()
+    }
+    
+    func downloadImage() {
+        DispatchQueue.global(qos: .background).async {
+            let _ = try? Data(contentsOf: imageUrl)
+        }
+        
     }
 }
 
