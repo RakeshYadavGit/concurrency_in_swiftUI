@@ -6,6 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F98E7EFB2E884038003C02A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98E7EF72E884038003C02A9 /* Assets.xcassets */; };
+		F98E7EFC2E884038003C02A9 /* ConcurrencyInSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E7EF82E884038003C02A9 /* ConcurrencyInSwiftApp.swift */; };
+		F98E7EFD2E884038003C02A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E7EF92E884038003C02A9 /* ContentView.swift */; };
+		F98E7F002E88406A003C02A9 /* SerialQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E7EFF2E884061003C02A9 /* SerialQueueTest.swift */; };
+		F98E7F032E884314003C02A9 /* CurrentDateTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E7F022E884308003C02A9 /* CurrentDateTimeView.swift */; };
+		F98E7F072E8844C4003C02A9 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E7F062E8844BC003C02A9 /* CurrentDate.swift */; };
+		F98E7F0A2E8848ED003C02A9 /* CurrentDateTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E7F092E8848E9003C02A9 /* CurrentDateTimeViewModel.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F98E7EDA2E8835DF003C02A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,14 +37,17 @@
 		F98E7ECC2E8835DE003C02A9 /* ConcurrencyInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrencyInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98E7ED92E8835DF003C02A9 /* ConcurrencyInSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConcurrencyInSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98E7EE32E8835DF003C02A9 /* ConcurrencyInSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConcurrencyInSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F98E7EF72E884038003C02A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F98E7EF82E884038003C02A9 /* ConcurrencyInSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyInSwiftApp.swift; sourceTree = "<group>"; };
+		F98E7EF92E884038003C02A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F98E7EFF2E884061003C02A9 /* SerialQueueTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialQueueTest.swift; sourceTree = "<group>"; };
+		F98E7F022E884308003C02A9 /* CurrentDateTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateTimeView.swift; sourceTree = "<group>"; };
+		F98E7F062E8844BC003C02A9 /* CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
+		F98E7F092E8848E9003C02A9 /* CurrentDateTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateTimeViewModel.swift; sourceTree = "<group>"; };
+		F98E7F0B2E88536B003C02A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F98E7ECE2E8835DE003C02A9 /* ConcurrencyInSwift */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ConcurrencyInSwift;
-			sourceTree = "<group>";
-		};
 		F98E7EDC2E8835DF003C02A9 /* ConcurrencyInSwiftTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ConcurrencyInSwiftTests;
@@ -75,7 +88,7 @@
 		F98E7EC32E8835DD003C02A9 = {
 			isa = PBXGroup;
 			children = (
-				F98E7ECE2E8835DE003C02A9 /* ConcurrencyInSwift */,
+				F98E7EFA2E884038003C02A9 /* ConcurrencyInSwift */,
 				F98E7EDC2E8835DF003C02A9 /* ConcurrencyInSwiftTests */,
 				F98E7EE62E8835DF003C02A9 /* ConcurrencyInSwiftUITests */,
 				F98E7ECD2E8835DE003C02A9 /* Products */,
@@ -92,6 +105,61 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F98E7EFA2E884038003C02A9 /* ConcurrencyInSwift */ = {
+			isa = PBXGroup;
+			children = (
+				F98E7F0B2E88536B003C02A9 /* Info.plist */,
+				F98E7F012E8842F0003C02A9 /* CurrentDataTimeView */,
+				F98E7EFE2E88403B003C02A9 /* CSQueue */,
+				F98E7EF72E884038003C02A9 /* Assets.xcassets */,
+				F98E7EF82E884038003C02A9 /* ConcurrencyInSwiftApp.swift */,
+				F98E7EF92E884038003C02A9 /* ContentView.swift */,
+			);
+			path = ConcurrencyInSwift;
+			sourceTree = "<group>";
+		};
+		F98E7EFE2E88403B003C02A9 /* CSQueue */ = {
+			isa = PBXGroup;
+			children = (
+				F98E7EFF2E884061003C02A9 /* SerialQueueTest.swift */,
+			);
+			path = CSQueue;
+			sourceTree = "<group>";
+		};
+		F98E7F012E8842F0003C02A9 /* CurrentDataTimeView */ = {
+			isa = PBXGroup;
+			children = (
+				F98E7F042E8844AB003C02A9 /* Model */,
+				F98E7F052E8844B2003C02A9 /* View */,
+				F98E7F082E8848B3003C02A9 /* ViewModel */,
+			);
+			path = CurrentDataTimeView;
+			sourceTree = "<group>";
+		};
+		F98E7F042E8844AB003C02A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F98E7F062E8844BC003C02A9 /* CurrentDate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F98E7F052E8844B2003C02A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F98E7F022E884308003C02A9 /* CurrentDateTimeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F98E7F082E8848B3003C02A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F98E7F092E8848E9003C02A9 /* CurrentDateTimeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +174,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				F98E7ECE2E8835DE003C02A9 /* ConcurrencyInSwift */,
 			);
 			name = ConcurrencyInSwift;
 			packageProductDependencies = (
@@ -212,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98E7EFB2E884038003C02A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98E7EFC2E884038003C02A9 /* ConcurrencyInSwiftApp.swift in Sources */,
+				F98E7F0A2E8848ED003C02A9 /* CurrentDateTimeViewModel.swift in Sources */,
+				F98E7F002E88406A003C02A9 /* SerialQueueTest.swift in Sources */,
+				F98E7EFD2E884038003C02A9 /* ContentView.swift in Sources */,
+				F98E7F072E8844C4003C02A9 /* CurrentDate.swift in Sources */,
+				F98E7F032E884314003C02A9 /* CurrentDateTimeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +469,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConcurrencyInSwift/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -424,6 +497,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConcurrencyInSwift/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

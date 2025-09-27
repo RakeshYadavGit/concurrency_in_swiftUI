@@ -9,26 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let imageUrl: URL = URL(string: "https://picsum.photos/200/300")!
-    
     var body: some View {
-        VStack {
-            List(0...100, id: \.self) { item in
-                Text("\(item)")
-            }
-            
-            Button("Download Image URL") {
-                self.downloadImage()
-            }
+        TabView {
+            CurrentDateTimeView()
+                .tabItem {
+                    Label("Current Date", systemImage: "calendar")
+                }
         }
-        .padding()
-    }
-    
-    func downloadImage() {
-        DispatchQueue.global(qos: .background).async {
-            let _ = try? Data(contentsOf: imageUrl)
-        }
-        
     }
 }
 
