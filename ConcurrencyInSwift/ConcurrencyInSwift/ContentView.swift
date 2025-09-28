@@ -15,6 +15,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Current Date", systemImage: "calendar")
                 }
+            NewsView()
+                .tabItem {
+                    Label("News App", systemImage: "clock")
+                }
         }
     }
 }

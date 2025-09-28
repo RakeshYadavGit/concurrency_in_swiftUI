@@ -28,6 +28,7 @@ struct CurrentDateTimeView: View {
             .task {
                 await self.viewModel.populateDates()
             }
+            .background(Color(.systemBackground))
         }
     }
 }
