@@ -25,14 +25,17 @@ struct NewsView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        newsViewModel.getSources()
+                        Task {
+                            await self.newsViewModel.getSources()
+                        }
+                        
                     } label: {
                         Image(systemName: "arrow.clockwise.circle")
                     }
                 }
             }
-            .onAppear {
-                newsViewModel.getSources()
+            .task {
+                await self.newsViewModel.getSources()
             }
         }
     }

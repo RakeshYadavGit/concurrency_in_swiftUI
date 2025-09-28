@@ -7,20 +7,18 @@
 
 import Foundation
 
+@MainActor
 class NewsArticleViewModel: ObservableObject {
     @Published var newsArticles = [NewsArticle]()
     
-    func getNewsBy(sourceId: String) {
+    func getNewsBy(sourceId: String) async {
         
-        NetworkManager.shared.fetchNews(by: sourceId, url: AppConstants.topHeadlines(by: sourceId)) { result in
-            switch result {
-                case .success(let newsArticles):
-                    DispatchQueue.main.async {
-                        self.newsArticles = newsArticles
-                    }
-                case .failure(let error):
-                    print(error)
-            }
+        do {
+            self.newsArticles = try await NetworkManager.shared.fetchNews(by: sourceId, url: AppConstants.topHeadlines(by: sourceId))
+        } catch {
+            #warning("Handle this later")
         }
+         
+        
     }
 }

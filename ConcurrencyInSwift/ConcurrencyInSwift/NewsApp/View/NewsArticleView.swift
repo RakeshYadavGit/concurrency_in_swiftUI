@@ -25,8 +25,8 @@ struct NewsArticleView: View {
                 NewsArticleCell(newsArticle: newsArticle)
             }
             .listStyle(.plain)
-            .onAppear {
-                newsArticleViewModel.getNewsBy(sourceId: id)
+            .task {
+                await newsArticleViewModel.getNewsBy(sourceId: id)
             }
             .navigationTitle(title)
         }

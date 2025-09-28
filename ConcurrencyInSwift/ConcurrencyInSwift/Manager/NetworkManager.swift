@@ -13,52 +13,22 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchSources(url: URL?, completion: @escaping (Result<[NewsSource], NetworkError>) -> Void) {
+    func fetchSource(url: URL?) async throws -> [NewsSource] {
+        guard let url = url else { return [] }
         
-        guard let url = url else {
-            completion(.failure(.badUrl))
-            return
-        }
+        let (data, _) = try await URLSession.shared.data(from: url)
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            
-            guard let data = data, error == nil else {
-                completion(.failure(.invalidData))
-                return
-            }
-            
-            let newsSourceResponse = try? JSONDecoder().decode(NewsSourceResponse.self, from: data)
-            completion(.success(newsSourceResponse?.sources ?? []))
-            
-        }.resume()
-        
+        let newsRes: NewsSourceResponse? = try? JSONDecoder().decode(NewsSourceResponse.self, from: data)
+        return newsRes?.sources ?? []
     }
     
-    func fetchNews(by sourceId: String, url: URL?, completion: @escaping (Result<[NewsArticle], NetworkError>) -> Void) {
+    func fetchNews(by sourceId: String, url: URL?) async throws -> [NewsArticle] {
+        guard let url = url else { return []}
         
-        guard let url = url else {
-            completion(.failure(.badUrl))
-            return
-        }
-            
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            
-            guard let data = data, error == nil else {
-                completion(.failure(.invalidData))
-                return
-            }
-            
-            do {
-                let newsArticleResponse = try JSONDecoder().decode(NewsArticleResponse.self, from: data)
-                completion(.success(newsArticleResponse.articles ?? []))
-            } catch {
-                completion(.failure(.invalidData))
-                
-                print(error)
-            }
-            
-            
-        }.resume()
+        let (data, _) = try await URLSession.shared.data(from: url)
         
+        let newsArticleResponse: NewsArticleResponse? = try? JSONDecoder().decode(NewsArticleResponse.self, from: data)
+        
+        return newsArticleResponse?.articles ?? []
     }
 }
